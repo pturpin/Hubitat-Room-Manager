@@ -1,0 +1,25 @@
+/*
+ * Virtual Thermometer
+ *
+ * 
+ * 
+ */
+
+metadata {
+  definition(name: "Virtual Thermometer", namespace: "hubitat_codahq", author: "Ben Rimmasch") {
+    capability "Sensor"
+    capability "TemperatureMeasurement"
+  }
+}
+
+def installed(){
+  initialize()
+}
+
+def updated(){
+  initialize()
+}
+
+def initialize(){
+  sendEvent(name: "temperature ", value: "50")
+}
